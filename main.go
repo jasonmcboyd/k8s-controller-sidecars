@@ -22,7 +22,7 @@ func getKubernetesClient() kubernetes.Interface {
 	kubeConfigPath := ""  // os.Getenv("HOME") + "/.kube/config"
 
 	// create the config from the path
-	config, err := clientcmd.BuildConfigFromFlags("", kubeConfigPath)
+	config, err := clientcmd.BuildConfigFromFlags(os.Args[1], kubeConfigPath)
 	if err != nil {
 		log.Fatalf("clientcmd.BuildConfigFromFlags: %v", err)
 	}
