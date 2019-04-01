@@ -24,13 +24,13 @@ func getKubernetesClient() kubernetes.Interface {
 	// create the config from the path
 	config, err := clientcmd.BuildConfigFromFlags("", kubeConfigPath)
 	if err != nil {
-		log.Fatalf("getClusterConfig: %v", err)
+		log.Fatalf("clientcmd.BuildConfigFromFlags: %v", err)
 	}
 
 	// generate the client based off of the config
 	client, err := kubernetes.NewForConfig(config)
 	if err != nil {
-		log.Fatalf("getClusterConfig: %v", err)
+		log.Fatalf("kubernetes.NewForConfig: %v", err)
 	}
 
 	log.Info("Successfully constructed k8s client")
