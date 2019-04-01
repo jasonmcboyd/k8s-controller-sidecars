@@ -13,3 +13,7 @@ This is a response to https://github.com/kubernetes/kubernetes/issues/25908.
 
 1. Deploy the controller into your cluster.
 1. Add the `nrmitchi.com/sidecars` annotation to your pods, with a comma-seperated list of sidecar container names. 
+
+## Build
+Install dependencies: go get ./...
+Build: go build -a -installsuffix cgo -o main .
