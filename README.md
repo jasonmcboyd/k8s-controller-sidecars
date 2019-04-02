@@ -26,4 +26,6 @@ go build -a -installsuffix cgo -o main .
 ```
 
 Build Docker Image
+```
 docker build -t controller-sidecars .
+```
